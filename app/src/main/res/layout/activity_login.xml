@@ -16,36 +16,46 @@
         android:textSize="25sp"
         android:gravity="center"
         android:textStyle="bold"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_marginBottom="20dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/email_layout"
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/email"
-            android:hint="@string/Email"/>
+            android:hint="@string/Email"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/password_layout"
+        app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/password"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:hint="@string/Password"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/porgressBar"
+        android:id="@+id/progressBar"
         android:visibility="gone"/>
 
     <Button
@@ -54,6 +64,16 @@
         android:id="@+id/login_btn"
         android:text="@string/Login"/>
 
+    <TextView
+        android:id="@+id/registerNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/click_to_register"
+        android:textColorLink="#03A9F4"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 
 
