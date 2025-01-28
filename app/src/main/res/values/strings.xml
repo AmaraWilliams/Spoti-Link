@@ -7,4 +7,6 @@
     <string name="Email">Email</string>
     <string name="Password">Password</string>
     <string name="Register">Register</string>
+    <string name="click_to_login">Already Have An Account? Log In</string>
+    <string name="click_to_register">Don\'t Have An Account? Register Now</string>
 </resources>
