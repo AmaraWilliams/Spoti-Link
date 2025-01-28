@@ -1,6 +1,7 @@
 package com.example.spotilink;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -97,6 +98,7 @@ public class Register extends AppCompatActivity {
                                     //FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(Register.this, "Account Created.",
                                             Toast.LENGTH_SHORT).show();
+                                    reload();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -119,6 +121,17 @@ public class Register extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    private void reload() {
+        // Save the login status in SharedPreferences
+        SharedPreferences preferences = getSharedPreferences("userPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("isLoggedIn", true);  // Save that the user is logged in
+        editor.apply();
+        Intent intent = new Intent(Register.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void validPassword(String password) {
