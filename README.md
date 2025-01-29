@@ -6,7 +6,7 @@ Physical device option:
 
 2.) In USB options on your android device, select USB-tethering
 
-3.) Allow USB on your android device
+3.) Allow USB on your android device (you may have to turn on USB debugging if you don't see this as a pop-up upon connection: go to settings < developer options < usb debugging)
 
 4.) Click "Run" in Android Studio (if you have already ran the app before, it may ask you if you want to reinstall, say "yes")
 
