@@ -86,7 +86,7 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
-                //validPassword(password);
+                validPassword(password);
 
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -142,7 +142,7 @@ public class Register extends AppCompatActivity {
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(password);
         if (!m.matches()) {
-            passwordInput.setError("password must be between 8-20 characters and contain at least 1 uppercase, lowercase, and special character.");
+            passwordLayout.setError("password must be between 8-20 characters and contain at least 1 uppercase, lowercase, and special character.");
         }
     }
 }

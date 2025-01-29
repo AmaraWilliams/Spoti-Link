@@ -27,8 +27,6 @@ private FragmentHomeBinding binding;
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         clock = root.findViewById(R.id.clock);
-
-
         return root;
     }
 
