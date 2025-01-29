@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null) {
             reload();
         }
     }
@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        //firebase authentication manager
+        // firebase authentication manager
         mAuth = FirebaseAuth.getInstance();
 
         emailInput = findViewById(R.id.email);
@@ -89,7 +89,8 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
-                //validPassword(password);
+                // validPassword(password);
+                // Firebase Authentication
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -116,21 +117,17 @@ public class Login extends AppCompatActivity {
             return insets;
         });
 
-
     }
 
     private void reload() {
         // Save the login status in SharedPreferences
         SharedPreferences preferences = getSharedPreferences("userPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("isLoggedIn", true);  // Save that the user is logged in
+        editor.putBoolean("isLoggedIn", true); // Save that the user is logged in
         editor.apply();
         Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
-
-
-
 
 }
